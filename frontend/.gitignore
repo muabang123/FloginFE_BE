@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Bỏ qua file môi trường (chứa mật khẩu)
+frontend/.env
+frontend/.env*
+!frontend/.env.example
+
+# Bỏ qua thư mục build của Backend (Spring Boot/Maven)
+backend/target/
+backend/.mvn/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Bỏ qua file cài đặt của IDE
+.idea/
+.vscode/
+*.iml
