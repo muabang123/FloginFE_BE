@@ -1,0 +1,25 @@
+/* src/components/ProductManagement.css */
+
+.product-management-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Căn chỉnh các nút hành động trong bảng */
+tbody td:last-child {
+    white-space: nowrap; /* Ngăn các nút bị xuống hàng */
+}
+
+body {
+  background-color: #f0f2f5; 
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

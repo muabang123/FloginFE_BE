@@ -1,0 +1,11 @@
+com\flogin\entity\User.class
+com\flogin\FloginApplication.class
+com\flogin\entity\User$Role.class
+com\flogin\entity\LoginHistory.class
+com\flogin\entity\Product.class
+com\flogin\entity\LoginHistory$FailureReason.class
+com\flogin\repository\ProductRepository.class
+com\flogin\repository\UserRepository.class
+com\flogin\repository\CategoryRepository.class
+com\flogin\entity\Category.class
+com\flogin\repository\LoginHistoryRepository.class
