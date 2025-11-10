@@ -207,8 +207,6 @@ public class Product {
                 ", updatedAt=" + updatedAt +
                 '}';
     }
-<<<<<<< HEAD
-=======
     public Long getId() { return id; }
     public String getTen() { return name; }
     public BigDecimal getGia() { return price; }
@@ -217,5 +215,4 @@ public class Product {
     public void setTen(String ten) { this.name = ten; }
     public void setGia(BigDecimal gia) { this.price = gia; }
     public void setSoLuong(Integer soLuong) { this.quantity= soLuong; }
->>>>>>> 773f153d2b8edfbf0fc232657f40c65fba79dc46
 }

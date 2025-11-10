@@ -1,23 +1,11 @@
-<<<<<<< HEAD
-com\flogin\entity\User$Role.class
-com\flogin\repository\LoginHistoryRepository.class
-com\flogin\entity\LoginHistory.class
-com\flogin\entity\Product.class
-com\flogin\entity\User.class
-com\flogin\FloginApplication.class
-=======
 com\flogin\entity\User.class
 com\flogin\FloginApplication.class
 com\flogin\entity\User$Role.class
 com\flogin\entity\LoginHistory.class
 com\flogin\entity\Product.class
->>>>>>> 773f153d2b8edfbf0fc232657f40c65fba79dc46
 com\flogin\entity\LoginHistory$FailureReason.class
 com\flogin\repository\ProductRepository.class
 com\flogin\repository\UserRepository.class
 com\flogin\repository\CategoryRepository.class
 com\flogin\entity\Category.class
-<<<<<<< HEAD
-=======
 com\flogin\repository\LoginHistoryRepository.class
->>>>>>> 773f153d2b8edfbf0fc232657f40c65fba79dc46

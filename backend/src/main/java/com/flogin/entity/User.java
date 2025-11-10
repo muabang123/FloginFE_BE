@@ -144,13 +144,10 @@ public class User {
                 ", createdAt=" + createdAt +
                 '}';
     }
-<<<<<<< HEAD
-=======
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
->>>>>>> 773f153d2b8edfbf0fc232657f40c65fba79dc46
 }

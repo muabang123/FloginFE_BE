@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\repository\ProductRepository.java
-D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\entity\Category.java
-D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\entity\Product.java
-D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\repository\UserRepository.java
-D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\repository\LoginHistoryRepository.java
-D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\entity\LoginHistory.java
-D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\repository\CategoryRepository.java
-D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\entity\User.java
-D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\FloginApplication.java
-=======
 D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\controller\ProductController.java
 D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\repository\ProductRepository.java
 D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\dto\LoginResponse.java
@@ -29,4 +18,3 @@ D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogi
 D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\controller\AuthController.java
 D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\dto\ProductDto.java
 D:\S1Y3\Software_testing\DOAN_cuoiki\FloginFE_BE\backend\src\main\java\com\flogin\entity\User.java
->>>>>>> 773f153d2b8edfbf0fc232657f40c65fba79dc46
