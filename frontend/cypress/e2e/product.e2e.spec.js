@@ -20,9 +20,15 @@ describe("Product E2E Tests (CRUD và Validation)", () => {
 
   // Đăng nhập một lần duy nhất trước khi chạy tất cả test
   before(() => {
+    cy.intercept("POST", "/api/auth/login", {
+      statusCode: 200,
+      body: { token: "fake-jwt-token-123" }
+    }).as("loginSuccess");
+    
     loginPage.visit();
-    // Đảm bảo tài khoản này tồn tại trên backend của bạn
     loginPage.login("admin", "admin123"); 
+    
+    cy.wait("@loginSuccess");
     cy.url().should("include", "/products");
   });
 

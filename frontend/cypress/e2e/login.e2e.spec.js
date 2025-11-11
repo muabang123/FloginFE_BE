@@ -42,6 +42,8 @@ describe("Login E2E Tests", () => {
     
     loginPage.login("admin", "admin123");
 
+    cy.wait("@loginSuccess");
+
     // Kiểm tra điều hướng (dựa theo navigate("/products") trong Login.jsx)
     cy.url().should("include", "/products");
   });
@@ -50,6 +52,8 @@ describe("Login E2E Tests", () => {
   it("TC4: Nên hiển thị lỗi API khi credentials sai", () => {
     // Test này cũng cần Backend đang chạy
     loginPage.login("wronguser", "Wrongpass123");
+
+    cy.wait("@loginFail");
 
     // Kiểm tra lỗi API (data-testid="login-message" trong Login.jsx)
     loginPage.getApiError()
