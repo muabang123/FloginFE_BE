@@ -46,8 +46,9 @@ jobs:
       # Cần set env var cho database để Spring Boot kết nối
       - name: Run Backend Tests
         run: |
-          cd backend # [cite: 1142]
-          ../mvnw clean test
+         cd backend
+          chmod +x mvnw
+          ./mvnw clean test 
         env:
           SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/testdb
           SPRING_DATASOURCE_USERNAME: postgres # Mặc định của image postgres
@@ -56,19 +57,19 @@ jobs:
       # 5. Cài đặt dependencies cho Frontend
       - name: Install Frontend Dependencies
         run: |
-          cd frontend # [cite: 1160]
-          npm install # [cite: 1161]
+          cd frontend # 
+          npm install # 
 
       # 6. Chạy Frontend Unit Tests (Jest)
       - name: Run Frontend Unit Tests
         run: |
-          cd frontend # [cite: 1160]
+          cd frontend # 
           npm run test:ci # Sử dụng script 'test:ci' của bạn
 
       # 7. Chạy Frontend E2E Tests (Cypress)
       - name: Run Frontend E2E Tests
         run: |
-          cd frontend # [cite: 1165]
+          cd frontend # 
           npm run ci:e2e # Sử dụng script 'ci:e2e' của bạn
 
       # 8. (Tùy chọn) Upload Coverage (nếu bạn đã cài đặt Codecov)
