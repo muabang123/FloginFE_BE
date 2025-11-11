@@ -11779,3 +11779,693 @@
 2025-11-11 16:51:24 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
 2025-11-11 16:51:24 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
 2025-11-11 16:51:25 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=admin, password=admin123]]
+2025-11-11 16:51:26 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
+2025-11-11 16:51:26 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-11-11 16:51:26 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=wronguser, password=Wrongpass123]]
+2025-11-11 16:51:27 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-11-11 16:51:27 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-11-11 16:51:27 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 16:51:27 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 16:51:27 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Sai tên tài kho?n ho?c m?t kh?u!, token=null]]
+2025-11-11 16:51:27 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-admin]]
+2025-11-11 16:51:27 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 16:51:27 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 401 UNAUTHORIZED
+2025-11-11 16:51:33 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
+2025-11-11 16:51:33 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-11-11 16:51:33 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=wronguser, password=Wrongpass123]]
+2025-11-11 16:51:33 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-11-11 16:51:33 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 16:51:33 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Sai tên tài kho?n ho?c m?t kh?u!, token=null]]
+2025-11-11 16:51:33 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 401 UNAUTHORIZED
+2025-11-11 16:56:26 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
+2025-11-11 16:56:26 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-11-11 16:56:26 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=wronguser, password=Wrongpass123]]
+2025-11-11 16:56:26 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-11-11 16:56:26 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 16:56:26 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Sai tên tài kho?n ho?c m?t kh?u!, token=null]]
+2025-11-11 16:56:27 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 401 UNAUTHORIZED
+2025-11-11 16:59:08 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 16:59:08 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 16:59:08 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 16:59:09 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 16:59:09 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 16:59:09 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 16:59:09 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
+2025-11-11 16:59:09 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-11-11 16:59:09 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=wronguser, password=Wrongpass123]]
+2025-11-11 16:59:09 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-11-11 16:59:09 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 16:59:09 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Sai tên tài kho?n ho?c m?t kh?u!, token=null]]
+2025-11-11 16:59:09 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 401 UNAUTHORIZED
+2025-11-11 16:59:20 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 16:59:20 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 16:59:20 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 16:59:20 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 16:59:20 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 16:59:20 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 16:59:20 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 16:59:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 16:59:20 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 16:59:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 16:59:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 16:59:20 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:03:31 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:03:31 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:03:31 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:03:31 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:03:31 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:03:31 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:03:33 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/products", parameters={}
+2025-11-11 17:03:33 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-11-11 17:03:34 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Test Product 1762855408493, gia=123456, soLuong=10, moTa=null, categoryId=1, (truncated)...]
+2025-11-11 17:03:34 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.is_active,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-11-11 17:03:34 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-11 17:03:35 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.flogin.entity.Product */insert 
+    into
+        products (category_id, created_at, created_by, description, name, price, quantity, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-11 17:03:35 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:03:35 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=21, ten=Test Product 1762855408493, gia=123456, soLuong=10, moTa=null, categoryId=1, c (truncated)...]
+2025-11-11 17:03:35 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2025-11-11 17:06:17 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:06:17 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:06:17 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:06:17 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:06:17 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:06:17 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:06:29 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:06:29 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:06:29 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:06:29 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:06:29 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:06:29 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:06:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/products", parameters={}
+2025-11-11 17:06:32 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-11-11 17:06:32 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Test Product 1762855587944, gia=123456, soLuong=10, moTa=null, categoryId=1, (truncated)...]
+2025-11-11 17:06:32 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.is_active,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-11-11 17:06:32 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-11 17:06:32 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.flogin.entity.Product */insert 
+    into
+        products (category_id, created_at, created_by, description, name, price, quantity, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-11 17:06:32 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:06:32 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=22, ten=Test Product 1762855587944, gia=123456, soLuong=10, moTa=null, categoryId=1, c (truncated)...]
+2025-11-11 17:06:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2025-11-11 17:07:51 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:07:51 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:07:52 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:07:52 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:07:52 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:07:52 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:07:57 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:07:58 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:07:58 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:07:58 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:07:58 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:07:58 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:08:01 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/products", parameters={}
+2025-11-11 17:08:01 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-11-11 17:08:01 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Test Product 1762855675171, gia=123456, soLuong=10, moTa=null, categoryId=1, (truncated)...]
+2025-11-11 17:08:02 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.is_active,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-11-11 17:08:02 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-11 17:08:02 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.flogin.entity.Product */insert 
+    into
+        products (category_id, created_at, created_by, description, name, price, quantity, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-11 17:08:03 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:08:03 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=23, ten=Test Product 1762855675171, gia=123456, soLuong=10, moTa=null, categoryId=1, c (truncated)...]
+2025-11-11 17:08:03 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2025-11-11 17:08:19 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:08:19 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:08:19 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:08:19 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:08:19 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:08:19 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:08:22 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/products", parameters={}
+2025-11-11 17:08:22 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-11-11 17:08:22 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Test Product 1762855696524, gia=123456, soLuong=10, moTa=null, categoryId=1, (truncated)...]
+2025-11-11 17:08:22 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.is_active,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-11-11 17:08:22 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-11-11 17:08:22 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.flogin.entity.Product */insert 
+    into
+        products (category_id, created_at, created_by, description, name, price, quantity, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-11 17:08:22 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:08:22 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=24, ten=Test Product 1762855696524, gia=123456, soLuong=10, moTa=null, categoryId=1, c (truncated)...]
+2025-11-11 17:08:22 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2025-11-11 17:08:44 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:08:44 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:08:44 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:08:44 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:08:44 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:08:44 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:12 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:12 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:12 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:12 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:12 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:12 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:25 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:25 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:25 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:25 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:34 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:34 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:34 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:34 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:34 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:34 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:34 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:34 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:34 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:34 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:34 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:34 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:39 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:39 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:39 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:39 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:39 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:39 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:46 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:46 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:46 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:46 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:46 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:46 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:46 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:46 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:50 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:50 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:50 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:50 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:50 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:50 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:50 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:50 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:50 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:50 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:50 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:50 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:55 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:55 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:55 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:55 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:55 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:55 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:58 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:58 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:58 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:58 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:58 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:58 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:09:58 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:09:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:09:58 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:09:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:09:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:09:58 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:10:26 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:10:26 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:10:27 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:10:27 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:10:27 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:10:27 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-11 17:11:02 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-11-11 17:11:02 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-11-11 17:11:03 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-11-11 17:11:03 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-11-11 17:11:03 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-11-11 17:11:03 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK

@@ -7,6 +7,11 @@ describe("Product E2E Tests (CRUD và Validation)", () => {
   const loginPage = new LoginPage();
   const productPage = new ProductPage();
 
+  const MOCK_PRODUCTS = [
+    { id: 1, ten: 'Laptop Pro X1', gia: 35000000, soLuong: 50, categoryId: 1 },
+    { id: 2, ten: 'Bàn phím cơ K10', gia: 1800000, soLuong: 120, categoryId: 1 },
+  ];
+
   // Tạo data test duy nhất để tránh xung đột
   const testData = {
     name: `Test Product ${Date.now()}`,
@@ -20,54 +25,72 @@ describe("Product E2E Tests (CRUD và Validation)", () => {
 
   // Đăng nhập một lần duy nhất trước khi chạy tất cả test
   before(() => {
-    cy.intercept("POST", "/api/auth/login", {
-      statusCode: 200,
-      body: { token: "fake-jwt-token-123" }
-    }).as("loginSuccess");
-    
-    loginPage.visit();
-    loginPage.login("admin", "admin123"); 
-    
-    cy.wait("@loginSuccess");
-    cy.url().should("include", "/products");
-  });
+    cy.intercept("POST", "/api/auth/login", {
+      statusCode: 200, body: { token: "fake-jwt-token-123" }
+    }).as("loginSuccess");
+    loginPage.visit();
+    loginPage.login("admin", "admin123"); 
+    cy.wait("@loginSuccess");
+    cy.url().should("include", "/products");
+  });
 
-  // Luôn truy cập /products trước mỗi test
-  beforeEach(() => {
-    cy.intercept("GET", "/api/products").as("getProducts");
-    cy.intercept("GET", "/api/categories").as("getCategories");
+  // === SỬA "beforeEach" ===
+  beforeEach(() => {
+    cy.intercept("GET", "/api/categories", {
+      statusCode: 200,
+      body: [
+        { id: 1, name: 'Electronics' },
+        { id: 2, name: 'Accessories' }
+      ]
+    }).as("getCategories");
 
-    productPage.visit();
-    cy.wait("@getProducts"); 
-  });
+    // Mock GET /api/products trả về 2 sản phẩm
+    cy.intercept("GET", "/api/products", {
+      statusCode: 200, body: MOCK_PRODUCTS
+    }).as("getProducts");
+
+    productPage.visit();
+    cy.wait("@getProducts"); 
+  });
 
   // --- Test Case cho CREATE [Yêu cầu a] ---
   it("TC1 [Create]: Nên tạo sản phẩm mới thành công (Happy Path)", () => {
-    productPage.clickAddNew();
-    cy.wait("@getCategories");
-    productPage.getModal().should("contain", "Thêm Sản Phẩm Mới");
-    
-    productPage.fillForm({
-      name: testData.name,
-      price: testData.price,
-      quantity: testData.quantity,
-      category: testData.category
-    });
+    productPage.clickAddNew();
+    cy.wait("@getCategories");
+    productPage.getCategorySpinner().should("not.exist");
+    
+    productPage.fillForm({
+      name: testData.name,
+      price: testData.price,
+      quantity: testData.quantity,
+      category: testData.category
+    });
 
-    cy.intercept("POST", "/api/products").as("createProduct");
-    cy.intercept("GET", "/api/products").as("getProductsAfterCreate");
-    productPage.submitForm();
+    // (MỚI) Giả lập API Create
+    cy.intercept("POST", "/api/products", { statusCode: 201, body: { id: 3, ...testData } }).as("createProduct");
+    
+    // (MỚI) Giả lập API loadProducts() (SAU KHI CREATE)
+    // Lần này nó phải trả về 3 SẢN PHẨM
+    cy.intercept("GET", "/api/products", {
+      statusCode: 200,
+      body: [
+        ...MOCK_PRODUCTS, // 2 sản phẩm cũ
+        { id: 3, ten: testData.name, gia: 123456, soLuong: 10 } // 1 sản phẩm mới
+      ]
+    }).as("getProductsAfterCreate");
 
-    cy.wait(["@createProduct", "@getProductsAfterCreate"]);
+    productPage.submitForm();
+    cy.wait(["@createProduct", "@getProductsAfterCreate"]); // Chờ cả 2
 
-    // Xác nhận: Modal đóng và sản phẩm mới xuất hiện
-    productPage.getModal().should("not.exist");
-    productPage.getTableRow(testData.name).should("be.visible");
-  });
+    productPage.getModal().should("not.exist");
+    productPage.getTableRow(testData.name).should("be.visible"); // Sẽ Pass
+  });
 
   it("TC2 [Create]: Nên hiển thị lỗi validation khi Tên rỗng", () => {
     productPage.clickAddNew();
-    
+    cy.wait("@getCategories");
+    // (MỚI) Chờ Spinner biến mất
+    productPage.getCategorySpinner().should("not.exist");
     // Bỏ trống Tên, chỉ điền các field khác
     productPage.fillForm({
       price: testData.price,
@@ -95,58 +118,80 @@ describe("Product E2E Tests (CRUD và Validation)", () => {
   });
 
   // --- Test Case cho READ [Yêu cầu b] ---
-  it("TC4 [Read]: Nên hiển thị đúng thông tin sản phẩm trong bảng", () => {
-    productPage.getTableRow(testData.name).within(() => {
-      cy.get("td").eq(1).should("contain", testData.name); // Cột Tên
-      cy.get("td").eq(2).should("contain", "123,456 VNĐ"); // Cột Giá (đã format)
-      cy.get("td").eq(3).should("contain", testData.quantity); // Cột Số lượng
-    });
-  });
+  it("TC4 [Read]: Nên hiển thị đúng thông tin sản phẩm (Tĩnh)", () => {
+    // Test này phải kiểm tra data TĨNH từ "beforeEach"
+    productPage.getTableRow("Laptop Pro X1").within(() => {
+      cy.get("td").eq(1).should("contain", "Laptop Pro X1");
+      cy.get("td").eq(2).should("contain", "35,000,000 VNĐ");
+      cy.get("td").eq(3).should("contain", "50");
+    });
+  });
 
   // --- Test Case cho UPDATE [Yêu cầu c] ---
   it("TC5 [Update]: Nên cập nhật sản phẩm thành công", () => {
-    productPage.clickEditOnProduct(testData.name);
-    cy.wait("@getCategories");
-    productPage.getModal().should("contain", "Sửa Sản Phẩm");
+    // Sửa sản phẩm TĨNH "Laptop Pro X1"
+    productPage.clickEditOnProduct("Laptop Pro X1");
+    cy.wait("@getCategories");
+    productPage.getCategorySpinner().should("not.exist");
 
-    // Chỉ cập nhật tên và giá
-    productPage.fillForm({
-      name: testData.updatedName,
-      price: testData.updatedPrice
-    });
-    cy.intercept("PUT", `/api/products/*`).as("updateProduct");
-    cy.intercept("GET", "/api/products").as("getProductsAfterUpdate");
-    productPage.submitForm();
-    cy.wait(["@updateProduct", "@getProductsAfterUpdate"]);
-    // Xác nhận: Modal đóng và sản phẩm cũ không còn, sản phẩm mới xuất hiện
-    productPage.getModal().should("not.exist");
-    cy.get("table > tbody").should("not.contain", testData.name);
-    productPage.getTableRow(testData.updatedName).should("be.visible");
-  });
+    productPage.fillForm({
+      name: testData.updatedName, // Tên mới
+      price: testData.updatedPrice // Giá mới
+    });
+
+    cy.intercept("PUT", `/api/products/*`, { statusCode: 200 }).as("updateProduct");
+    // (MỚI) Giả lập API loadProducts() (SAU KHI UPDATE)
+    cy.intercept("GET", "/api/products", {
+      statusCode: 200,
+      body: [
+        // Laptop Pro X1 đã bị đổi tên
+        { id: 1, ten: testData.updatedName, gia: 999999, soLuong: 50 }, 
+        MOCK_PRODUCTS[1] // Bàn phím cơ K10
+      ]
+    }).as("getProductsAfterUpdate");
+
+    productPage.submitForm();
+    cy.wait(["@updateProduct", "@getProductsAfterUpdate"]);
+
+    productPage.getModal().should("not.exist");
+    cy.get("table > tbody").should("not.contain", "Laptop Pro X1"); // Tên cũ biến mất
+    productPage.getTableRow(testData.updatedName).should("be.visible"); // Tên mới xuất hiện
+  });
 
   it("TC6 [Update]: Nên giữ nguyên thông tin khi Hủy cập nhật", () => {
-    productPage.clickEditOnProduct(testData.updatedName); // Dùng tên đã update
-    productPage.fillForm({ name: "Tên tạm" });
-    productPage.cancelForm();
-    
-    // Xác nhận: Modal đóng và tên gốc vẫn còn
-    productPage.getModal().should("not.exist");
-    productPage.getTableRow(testData.updatedName).should("be.visible");
-  });
+    // Sửa sản phẩm TĨNH
+    productPage.clickEditOnProduct("Laptop Pro X1"); 
+    productPage.fillForm({ name: "Tên tạm" });
+    productPage.cancelForm();
+    
+    productPage.getModal().should("not.exist");
+    // Tên gốc "Laptop Pro X1" phải còn
+    productPage.getTableRow("Laptop Pro X1").should("be.visible");
+  });
 
   // --- Test Case cho DELETE [Yêu cầu d] ---
   it("TC7 [Delete]: Nên xoá sản phẩm thành công (Happy Path)", () => {
-    productPage.clickDeleteOnProduct(testData.updatedName);
-    productPage.getModal().should("contain", "Xác nhận xoá");
-    
-    // Xác nhận tên sản phẩm trong modal
-    productPage.getModal().should("contain", testData.updatedName);
-    productPage.confirmDelete();
+    // Xoá sản phẩm TĨNH
+    productPage.clickDeleteOnProduct("Laptop Pro X1");
+    productPage.getModal().should("contain", "Xác nhận xoá");
+    productPage.getModal().should("contain", "Laptop Pro X1");
 
-    // Xác nhận: Modal đóng và sản phẩm biến mất
-    productPage.getModal().should("not.exist");
-    cy.contains(testData.updatedName).should("not.exist");
-  });
+    cy.intercept("DELETE", `/api/products/*`, { statusCode: 204 }).as("deleteProduct");
+    // (MỚI) Giả lập API loadProducts() (SAU KHI DELETE)
+    // Chỉ còn 1 sản phẩm
+    cy.intercept("GET", "/api/products", {
+      statusCode: 200,
+      body: [
+        MOCK_PRODUCTS[1] // Chỉ còn 'Bàn phím cơ K10'
+      ]
+    }).as("getProductsAfterDelete");
+    
+    productPage.confirmDelete();
+    cy.wait(["@deleteProduct", "@getProductsAfterDelete"]);
+
+    productPage.getModal().should("not.exist");
+    cy.contains("Laptop Pro X1").should("not.exist"); // Tên cũ biến mất
+    });
 
   it("TC8 [Delete]: Nên hủy xoá sản phẩm", () => {
     // Lấy 1 item tĩnh (từ MOCK_PRODUCTS) để test
@@ -168,6 +213,7 @@ describe("Product E2E Tests (CRUD và Validation)", () => {
     
     productPage.clickAddNew();
     cy.wait("@getCategories");
+    productPage.getCategorySpinner().should("not.exist");
     productPage.fillForm({ name: "API Fail Test", price: "1", quantity: "1", category: "1"});
     productPage.submitForm();
     

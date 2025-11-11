@@ -27,6 +27,10 @@ export class ProductPage {
     // Lấy alert báo lỗi (ví dụ: Xoá thất bại)
     return cy.get(".alert-danger");
   }
+  getCategorySpinner() {
+    // Tìm Spinner của react-bootstrap bên trong modal
+    return this.getModal().find('.spinner-border');
+  }
 
   // --- Các hành động trong Form (Modal) ---
   fillForm(product) {

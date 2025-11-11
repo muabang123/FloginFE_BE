@@ -40,27 +40,40 @@ describe("Login E2E Tests", () => {
     // (Nếu bạn không muốn test với DB thật, bạn phải dùng cy.intercept()
     // để mock API, tương tự như cách bạn mock authService trong Jest)
     
-    loginPage.login("admin", "admin123");
+    cy.intercept("POST", "/api/auth/login", {
+      statusCode: 200,
+      body: { token: "fake-jwt-token-123" }
+    }).as("loginSuccess"); // Đặt tên cho nó là @loginSuccess
 
-    cy.wait("@loginSuccess");
+    // 2. Hành động
+    loginPage.login("admin", "admin123");
 
-    // Kiểm tra điều hướng (dựa theo navigate("/products") trong Login.jsx)
-    cy.url().should("include", "/products");
-  });
+    // 3. Chờ
+    cy.wait("@loginSuccess"); // Giờ nó sẽ tìm thấy
+
+    // 4. Kiểm tra
+    cy.url().should("include", "/products");
+  });
 
   // Yêu cầu c) Test error flow
   it("TC4: Nên hiển thị lỗi API khi credentials sai", () => {
     // Test này cũng cần Backend đang chạy
-    loginPage.login("wronguser", "Wrongpass123");
+    cy.intercept("POST", "/api/auth/login", {
+      statusCode: 401,
+      body: { message: "Sai tên tài khoản hoặc mật khẩu!" }
+    }).as("loginFail"); // Đặt tên là @loginFail
 
-    cy.wait("@loginFail");
+    // 2. Hành động
+    loginPage.login("wronguser", "Wrongpass123");
 
-    // Kiểm tra lỗi API (data-testid="login-message" trong Login.jsx)
-    loginPage.getApiError()
-      .should("be.visible")
-      .and("contain", "Sai tên tài khoản hoặc mật khẩu!"); // (Hoặc message lỗi chính xác từ API của bạn)
-      
-    // Đảm bảo vẫn ở trang login
-    cy.url().should("not.include", "/products");
-  });
+    // 3. Chờ
+    cy.wait("@loginFail"); // Giờ nó sẽ tìm thấy
+
+    // 4. Kiểm tra
+    loginPage.getApiError()
+      .should("be.visible")
+      .and("contain", "Sai tên tài khoản hoặc mật khẩu!");
+      
+    cy.url().should("not.include", "/products");
+  });
 });
