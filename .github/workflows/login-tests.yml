@@ -1,0 +1,43 @@
+# frontend/.github/workflows/login-tests.yml
+
+name: Login Tests CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-login:
+    runs-on: ubuntu-latest
+    
+    # Chỉ định thư mục làm việc (vì file .yml này nằm trong /frontend)
+    defaults:
+      run:
+        working-directory: ./frontend
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          # Cache npm để build nhanh hơn
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Login Unit Tests (Jest)
+        # Chạy Jest test (giống file PDF)
+        run: npm test -- --testPathPattern=Login --watchAll=false
+
+      - name: Run Login E2E Tests (Cypress)
+        # Chạy E2E test (sử dụng script ci:e2e đã tạo)
+        # File yml trong PDF  thiếu bước khởi động server,
+        # cách này sẽ đảm bảo server chạy trước khi test.
+        run: npm run ci:e2e
