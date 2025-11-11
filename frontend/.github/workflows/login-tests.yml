@@ -34,7 +34,7 @@ jobs:
 
       - name: Run Login Unit Tests (Jest)
         # Chạy Jest test (giống file PDF)
-        run: npm test -- --testPathPatterns=Login --watchAll=false
+        run: npm run test:login
 
       - name: Run Login E2E Tests (Cypress)
         # Chạy E2E test (sử dụng script ci:e2e đã tạo)

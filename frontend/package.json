@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "jest",
     "test:e2e": "cypress run",
-    "ci:e2e": "start-server-and-test dev http://localhost:5173 test:e2e"
+    "ci:e2e": "start-server-and-test dev http://localhost:5173 test:e2e",
+    "test:login": "jest --testPathPatterns=Login --watchAll=false"
   },
   "jest": {
     "testEnvironment": "jsdom",
