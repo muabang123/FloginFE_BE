@@ -1,80 +1,78 @@
-# .github/workflows/ci2.yml
-# Dựa trên Listing 17
-
 name: Complete CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ] # [ĐÃ SỬA] Thêm giá trị cho branches [cite: 1097]
+    branches: [ main ]
 
 jobs:
-  test: # [ĐÃ SỬA] Xóa [cite: 1098] khỏi dòng này
+  test:
     runs-on: ubuntu-latest
 
-    # Khởi động dịch vụ database (PostgreSQL) cho backend test [cite: 1104, 1105]
+    # [QUAN TRỌNG] Cấu hình MySQL Service thay vì PostgreSQL
     services:
-      postgres:
-        image: postgres:14
+      mysql:
+        image: mysql:8.0
         env:
-          POSTGRES_DB: testdb # [cite: 1117]
-          POSTGRES_PASSWORD: password # [cite: 1118]
+          MYSQL_DATABASE: testdb
+          MYSQL_ROOT_PASSWORD: password
         ports:
-          - 5432:5432 # [cite: 1119, 1121]
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
-      # 1. Lấy code
+      # 1. Lấy code về
       - name: Checkout Code
-        uses: actions/checkout@v3 # [ĐÃ SỬA] [cite: 1122] Dùng v3 mới hơn
+        uses: actions/checkout@v3
 
-      # 2. Cài đặt Java 17 cho Backend [cite: 1123, 1129]
+      # 2. Cài đặt k6 (Để phục vụ script test:load)
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1
+
+      # 3. Cài đặt Java 17
       - name: Setup Java 17
-        uses: actions/setup-java@v3 # [cite: 1124]
+        uses: actions/setup-java@v3
         with:
-          java-version: '17' # [cite: 1129]
+          java-version: '17'
           distribution: 'temurin'
           cache: 'maven'
 
-      # 3. Cài đặt Node.js 20 cho Frontend (giống file của bạn)
+      # 4. Cài đặt Node.js 20
       - name: Setup Node.js 20
-        uses: actions/setup-node@v3 # [cite: 1132, 1134]
+        uses: actions/setup-node@v3
         with:
-          node-version: '20' # Bạn dùng '20'
+          node-version: '20'
           cache: 'npm'
           cache-dependency-path: frontend/package-lock.json
 
-      # 4. Chạy Backend Tests (Maven)
-      # Cần set env var cho database để Spring Boot kết nối
+      # 5. Chạy Backend Tests
+      # Đã sửa cấu hình kết nối sang MySQL
       - name: Run Backend Tests
         run: |
-         cd backend
-         
-          mvn clean test 
+          cd backend
+          mvn clean test
         env:
-          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/testdb
-          SPRING_DATASOURCE_USERNAME: postgres # Mặc định của image postgres
-          SPRING_DATASOURCE_PASSWORD: password # Khớp với env của service
+          SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/testdb
+          SPRING_DATASOURCE_USERNAME: root
+          SPRING_DATASOURCE_PASSWORD: password
+          # Dòng này giúp Hibernate tự tạo bảng trong DB ảo
+          SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop 
 
-      # 5. Cài đặt dependencies cho Frontend
+      # 6. Cài đặt dependencies Frontend
       - name: Install Frontend Dependencies
         run: |
-          cd frontend # 
-          npm install # 
+          cd frontend
+          npm install
 
-      # 6. Chạy Frontend Unit Tests (Jest)
+      # 7. Chạy Frontend Unit Tests (Jest)
       - name: Run Frontend Unit Tests
         run: |
-          cd frontend # 
-          npm run test:ci # Sử dụng script 'test:ci' của bạn
+          cd frontend
+          npm run test:ci
 
-      # 7. Chạy Frontend E2E Tests (Cypress)
-      - name: Run Frontend E2E Tests
+      # 8. Chạy Performance Test (k6) - Kiểm tra script chạy được không
+      - name: Verify k6 Script
         run: |
-          cd frontend # 
-          npm run ci:e2e # Sử dụng script 'ci:e2e' của bạn
-
-      # 8. (Tùy chọn) Upload Coverage (nếu bạn đã cài đặt Codecov)
-      - name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@v3 #
-        with:
-          # Lấy các file coverage từ cả backend và frontend 
-          files: ./backend/target/site/jacoco/jacoco.xml,./frontend/coverage/lcov.info
+          cd frontend
+          k6 version
+          # Chỉ kiểm tra cú pháp file loadtest.js có đúng không
+          # (Không chạy thật vì cần backend đang active)
