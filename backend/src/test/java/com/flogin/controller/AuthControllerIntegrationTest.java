@@ -1,3 +1,16 @@
+/**
+ * =========================================================================================
+ * DANH SÁCH KIỂM TRA (CHECKLIST) INTEGRATION TEST - AUTH CONTROLLER
+ * =========================================================================================
+ * I. MỤC TIÊU TÍCH HỢP (INTEGRATION OBJECTIVE):
+ * - HTTP Status: Kiểm tra mã trạng thái trả về (200 OK, 401 Unauthorized, 400 Bad Request).
+ * - JSON Structure: Đảm bảo cấu trúc JSON trả về khớp với thiết kế API.
+ * * II. MỤC TIÊU BẢO MẬT (SECURITY OBJECTIVE):
+ * - Input Validation: Kiểm tra @Valid hoạt động đúng với dữ liệu rỗng/sai định dạng.
+ * - CORS: Kiểm tra các headers Access-Control được thiết lập đúng.
+ * =========================================================================================
+ */
+
 package com.flogin.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

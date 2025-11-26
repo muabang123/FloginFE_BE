@@ -2,5 +2,6 @@ com\flogin\controller\ProductControllerIntegrationTest.class
 com\flogin\controller\AuthControllerMockTest.class
 com\flogin\service\AuthServiceTest.class
 com\flogin\service\ProductServiceMockTest.class
+com\flogin\security\SecurityIntegrationTest.class
 com\flogin\controller\AuthControllerIntegrationTest.class
 com\flogin\service\ProductServiceTest.class

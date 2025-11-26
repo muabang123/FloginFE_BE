@@ -25,19 +25,19 @@ import java.util.Optional;
 <span class="fc" id="L25">        User user = userOptional.get();</span>
 
         // 2. KIỂM TRA MẬT KHẨU
-<span class="fc bfc" id="L28" title="All 2 branches covered.">        if (!user.getPassword().equals(request.password())) {</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        if (!user.getPassword().equals(request.password())) {</span>
 <span class="fc" id="L29">            throw new RuntimeException(&quot;Sai tên tài khoản hoặc mật khẩu!&quot;);</span>
         }
 
         // 3. THÊM BƯỚC KIỂM TRA NÀY
         // (Sử dụng hàm isActive() từ file User.java của bạn)
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (!user.isActive()) {</span>
-<span class="fc" id="L35">            throw new RuntimeException(&quot;Tài khoản của bạn đã bị khóa!&quot;);</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        if (!user.isActive()) {</span>
+<span class="nc" id="L35">            throw new RuntimeException(&quot;Tài khoản của bạn đã bị khóa!&quot;);</span>
         }
 
         // 4. Tạo token nếu mọi thứ đều ổn
-<span class="fc" id="L39">        String token = &quot;dummy-token-for-&quot; + user.getUsername();</span>
-<span class="fc" id="L40">        return new LoginResponse(&quot;Đăng nhập thành công&quot;, token);</span>
+<span class="nc" id="L39">        String token = &quot;dummy-token-for-&quot; + user.getUsername();</span>
+<span class="nc" id="L40">        return new LoginResponse(&quot;Đăng nhập thành công&quot;, token);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

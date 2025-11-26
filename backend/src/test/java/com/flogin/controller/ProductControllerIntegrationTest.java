@@ -1,3 +1,16 @@
+/**
+ * =========================================================================================
+ * DANH SÁCH KIỂM TRA (CHECKLIST) INTEGRATION TEST - PRODUCT CONTROLLER
+ * =========================================================================================
+ * I. MỤC TIÊU API RESTFUL:
+ * - Verbs: Kiểm tra đúng phương thức HTTP (GET, POST, PUT, DELETE).
+ * - Serialization: Kiểm tra việc chuyển đổi giữa Object Java và JSON (Jackson).
+ * * II. MỤC TIÊU LUỒNG DỮ LIỆU:
+ * - Mock Service: Đảm bảo Controller gọi đúng phương thức của Service với tham số chính xác.
+ * - Exception Mapping: Kiểm tra việc map Exception từ Service sang HTTP Status 404/500.
+ * =========================================================================================
+ */
+
 package com.flogin.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

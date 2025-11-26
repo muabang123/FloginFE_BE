@@ -1,3 +1,16 @@
+/**
+ * =========================================================================================
+ * DANH SÁCH KIỂM TRA (CHECKLIST) UNIT TEST - AUTH SERVICE
+ * =========================================================================================
+ * I. MỤC TIÊU LOGIC NGHIỆP VỤ:
+ * - Xác thực: Kiểm tra logic so sánh password và trạng thái tài khoản (Active/Inactive).
+ * - Token: Đảm bảo Token được sinh ra đúng định dạng khi đăng nhập thành công.
+ * * II. XỬ LÝ NGOẠI LỆ (EXCEPTION HANDLING):
+ * - Kiểm tra việc ném ra RuntimeException khi thông tin đăng nhập sai.
+ * - Đảm bảo thông báo lỗi (Error Message) rõ ràng và chính xác.
+ * =========================================================================================
+ */
+
 package com.flogin.service;
 
 import com.flogin.dto.LoginRequest;

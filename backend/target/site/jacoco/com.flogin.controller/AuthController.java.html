@@ -38,8 +38,8 @@ import org.springframework.web.bind.annotation.*;
         }
 
         try {
-<span class="fc" id="L41">            LoginResponse response = authService.authenticate(request);</span>
-<span class="fc" id="L42">            return ResponseEntity.ok(response);</span>
+<span class="nc" id="L41">            LoginResponse response = authService.authenticate(request);</span>
+<span class="nc" id="L42">            return ResponseEntity.ok(response);</span>
 <span class="fc" id="L43">        } catch (RuntimeException e) {</span>
 <span class="fc" id="L44">            return ResponseEntity.status(401).body(new LoginResponse(e.getMessage(), null));</span>
         }

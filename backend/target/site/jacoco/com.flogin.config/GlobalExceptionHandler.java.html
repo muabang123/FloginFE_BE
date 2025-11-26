@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity&lt;String&gt; handleRuntimeException(RuntimeException ex) {
-<span class="fc" id="L14">        String message = ex.getMessage();</span>
-<span class="fc bfc" id="L15" title="All 2 branches covered.">        if (message.contains(&quot;Không tìm thấy sản phẩm&quot;) ||</span>
-<span class="fc bfc" id="L16" title="All 2 branches covered.">                message.contains(&quot;Không tìm thấy Category&quot;)) {</span>
-<span class="fc" id="L17">            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);</span>
+<span class="nc" id="L14">        String message = ex.getMessage();</span>
+<span class="nc bnc" id="L15" title="All 2 branches missed.">        if (message.contains(&quot;Không tìm thấy sản phẩm&quot;) ||</span>
+<span class="nc bnc" id="L16" title="All 2 branches missed.">                message.contains(&quot;Không tìm thấy Category&quot;)) {</span>
+<span class="nc" id="L17">            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);</span>
         }
-<span class="fc" id="L19">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);</span>
+<span class="nc" id="L19">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

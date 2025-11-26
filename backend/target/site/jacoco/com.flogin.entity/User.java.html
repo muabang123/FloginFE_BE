@@ -25,7 +25,7 @@ import java.util.List;
     @Index(name = &quot;idx_email&quot;, columnList = &quot;email&quot;),
     @Index(name = &quot;idx_is_active&quot;, columnList = &quot;is_active&quot;)
 })
-<span class="pc bnc" id="L28" title="All 94 branches missed.">@Data</span>
+<span class="nc bnc" id="L28" title="All 94 branches missed.">@Data</span>
 <span class="fc" id="L29">@NoArgsConstructor</span>
 <span class="nc" id="L30">@AllArgsConstructor</span>
 public class User {
@@ -129,7 +129,7 @@ public class User {
      * Check if user is active
      */
     public boolean isActive() {
-<span class="pc bpc" id="L132" title="1 of 4 branches missed.">        return this.isActive != null &amp;&amp; this.isActive;</span>
+<span class="nc bnc" id="L132" title="All 4 branches missed.">        return this.isActive != null &amp;&amp; this.isActive;</span>
     }
 
     @Override
@@ -144,11 +144,11 @@ public class User {
                 &quot;, createdAt=&quot; + createdAt +
                 '}';
     }
-<span class="fc" id="L147">    public Long getId() { return id; }</span>
-<span class="fc" id="L148">    public void setId(Long id) { this.id = id; }</span>
-<span class="fc" id="L149">    public String getUsername() { return username; }</span>
-<span class="fc" id="L150">    public void setUsername(String username) { this.username = username; }</span>
+<span class="nc" id="L147">    public Long getId() { return id; }</span>
+<span class="nc" id="L148">    public void setId(Long id) { this.id = id; }</span>
+<span class="nc" id="L149">    public String getUsername() { return username; }</span>
+<span class="nc" id="L150">    public void setUsername(String username) { this.username = username; }</span>
 <span class="fc" id="L151">    public String getPassword() { return password; }</span>
-<span class="fc" id="L152">    public void setPassword(String password) { this.password = password; }</span>
+<span class="nc" id="L152">    public void setPassword(String password) { this.password = password; }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

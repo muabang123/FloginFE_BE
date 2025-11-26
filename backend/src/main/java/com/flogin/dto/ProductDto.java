@@ -2,21 +2,23 @@ package com.flogin.dto;
 
 import java.math.BigDecimal;
 
-// Dùng Lombok (mà bạn đã có) để code ngắn gọn
+// Import thêm AllArgsConstructor
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class ProductDto {
     private Long id;
     
-    // Các trường này phải khớp với frontend (ProductForm.jsx)
+    // Các trường này khớp với frontend (ProductForm.jsx)
     private String ten;
     private BigDecimal gia;
     private int soLuong;
 
-    // Thêm các trường khác nếu file Product.java của bạn có
+    // Các trường bổ sung
     private String moTa;
     // private String danhMuc;
     private Long categoryId;

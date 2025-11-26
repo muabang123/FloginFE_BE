@@ -2,24 +2,26 @@
 
 import java.math.BigDecimal;
 
-// Dùng Lombok (mà bạn đã có) để code ngắn gọn
+// Import thêm AllArgsConstructor
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-<span class="pc bnc" id="L9" title="All 56 branches missed.">@Data</span>
-<span class="fc" id="L10">@NoArgsConstructor</span>
+<span class="pc bnc" id="L10" title="All 56 branches missed.">@Data</span>
+<span class="fc" id="L11">@NoArgsConstructor</span>
+<span class="nc" id="L12">@AllArgsConstructor</span>
 public class ProductDto {
-<span class="fc" id="L12">    private Long id;</span>
+<span class="fc" id="L14">    private Long id;</span>
     
-    // Các trường này phải khớp với frontend (ProductForm.jsx)
-<span class="fc" id="L15">    private String ten;</span>
-<span class="fc" id="L16">    private BigDecimal gia;</span>
-<span class="fc" id="L17">    private int soLuong;</span>
+    // Các trường này khớp với frontend (ProductForm.jsx)
+<span class="fc" id="L17">    private String ten;</span>
+<span class="fc" id="L18">    private BigDecimal gia;</span>
+<span class="fc" id="L19">    private int soLuong;</span>
 
-    // Thêm các trường khác nếu file Product.java của bạn có
-<span class="fc" id="L20">    private String moTa;</span>
+    // Các trường bổ sung
+<span class="fc" id="L22">    private String moTa;</span>
     // private String danhMuc;
-<span class="fc" id="L22">    private Long categoryId;</span>
-<span class="fc" id="L23">    private Long createdById;</span>
+<span class="fc" id="L24">    private Long categoryId;</span>
+<span class="fc" id="L25">    private Long createdById;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

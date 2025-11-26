@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
     @Index(name = &quot;idx_created_by&quot;, columnList = &quot;created_by&quot;),
     @Index(name = &quot;idx_created_at&quot;, columnList = &quot;created_at&quot;)
 })
-<span class="pc bnc" id="L26" title="All 78 branches missed.">@Data</span>
+<span class="nc bnc" id="L26" title="All 78 branches missed.">@Data</span>
 <span class="fc" id="L27">@NoArgsConstructor</span>
 <span class="nc" id="L28">@AllArgsConstructor</span>
 public class Product {
@@ -58,13 +58,13 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = &quot;category_id&quot;, nullable = false, 
                 foreignKey = @ForeignKey(name = &quot;fk_product_category&quot;))
-<span class="fc" id="L61">    private Category category;</span>
+<span class="nc" id="L61">    private Category category;</span>
 
     @NotNull(message = &quot;Creator is required&quot;)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = &quot;created_by&quot;, nullable = false, 
                 foreignKey = @ForeignKey(name = &quot;fk_product_user&quot;))
-<span class="fc" id="L67">    private User createdBy;</span>
+<span class="nc" id="L67">    private User createdBy;</span>
 
     @CreationTimestamp
     @Column(name = &quot;created_at&quot;, nullable = false, updatable = false)
@@ -86,13 +86,13 @@ public class Product {
     /**
      * Constructor with category
      */
-<span class="fc" id="L89">    public Product(String name, BigDecimal price, Integer quantity, Category category, User createdBy) {</span>
-<span class="fc" id="L90">        this.name = name;</span>
-<span class="fc" id="L91">        this.price = price;</span>
-<span class="fc" id="L92">        this.quantity = quantity;</span>
-<span class="fc" id="L93">        this.category = category;</span>
-<span class="fc" id="L94">        this.createdBy = createdBy;</span>
-<span class="fc" id="L95">    }</span>
+<span class="nc" id="L89">    public Product(String name, BigDecimal price, Integer quantity, Category category, User createdBy) {</span>
+<span class="nc" id="L90">        this.name = name;</span>
+<span class="nc" id="L91">        this.price = price;</span>
+<span class="nc" id="L92">        this.quantity = quantity;</span>
+<span class="nc" id="L93">        this.category = category;</span>
+<span class="nc" id="L94">        this.createdBy = createdBy;</span>
+<span class="nc" id="L95">    }</span>
 
     /**
      * Full constructor
@@ -207,13 +207,13 @@ public class Product {
                 &quot;, updatedAt=&quot; + updatedAt +
                 '}';
     }
-<span class="fc" id="L210">    public Long getId() { return id; }</span>
-<span class="fc" id="L211">    public String getTen() { return name; }</span>
-<span class="fc" id="L212">    public BigDecimal getGia() { return price; }</span>
-<span class="fc" id="L213">    public Integer getSoLuong() { return quantity; }</span>
+<span class="nc" id="L210">    public Long getId() { return id; }</span>
+<span class="nc" id="L211">    public String getTen() { return name; }</span>
+<span class="nc" id="L212">    public BigDecimal getGia() { return price; }</span>
+<span class="nc" id="L213">    public Integer getSoLuong() { return quantity; }</span>
 
-<span class="fc" id="L215">    public void setTen(String ten) { this.name = ten; }</span>
-<span class="fc" id="L216">    public void setGia(BigDecimal gia) { this.price = gia; }</span>
-<span class="fc" id="L217">    public void setSoLuong(Integer soLuong) { this.quantity= soLuong; }</span>
+<span class="nc" id="L215">    public void setTen(String ten) { this.name = ten; }</span>
+<span class="nc" id="L216">    public void setGia(BigDecimal gia) { this.price = gia; }</span>
+<span class="nc" id="L217">    public void setSoLuong(Integer soLuong) { this.quantity= soLuong; }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -21,19 +21,19 @@ import java.util.List;
     @Index(name = &quot;idx_name&quot;, columnList = &quot;name&quot;),
     @Index(name = &quot;idx_is_active&quot;, columnList = &quot;is_active&quot;)
 })
-<span class="pc bnc" id="L24" title="All 54 branches missed.">@Data</span>
+<span class="nc bnc" id="L24" title="All 54 branches missed.">@Data</span>
 <span class="fc" id="L25">@NoArgsConstructor</span>
 <span class="nc" id="L26">@AllArgsConstructor</span>
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-<span class="fc" id="L31">    private Long id;</span>
+<span class="nc" id="L31">    private Long id;</span>
 
     @NotBlank(message = &quot;Category name is required&quot;)
     @Size(max = 100, message = &quot;Category name must not exceed 100 characters&quot;)
     @Column(nullable = false, unique = true, length = 100)
-<span class="fc" id="L36">    private String name;</span>
+<span class="nc" id="L36">    private String name;</span>
 
     @Column(columnDefinition = &quot;TEXT&quot;)
 <span class="nc" id="L39">    private String description;</span>
