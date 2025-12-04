@@ -21,32 +21,32 @@ import java.util.List;
     @Index(name = &quot;idx_name&quot;, columnList = &quot;name&quot;),
     @Index(name = &quot;idx_is_active&quot;, columnList = &quot;is_active&quot;)
 })
-<span class="nc bnc" id="L24" title="All 54 branches missed.">@Data</span>
-<span class="fc" id="L25">@NoArgsConstructor</span>
-<span class="nc" id="L26">@AllArgsConstructor</span>
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-<span class="nc" id="L31">    private Long id;</span>
+    private Long id;
 
     @NotBlank(message = &quot;Category name is required&quot;)
     @Size(max = 100, message = &quot;Category name must not exceed 100 characters&quot;)
     @Column(nullable = false, unique = true, length = 100)
-<span class="nc" id="L36">    private String name;</span>
+    private String name;
 
     @Column(columnDefinition = &quot;TEXT&quot;)
-<span class="nc" id="L39">    private String description;</span>
+    private String description;
 
-<span class="pc" id="L41">    @Column(name = &quot;is_active&quot;, nullable = false)</span>
-<span class="pc" id="L42">    private Boolean isActive = true;</span>
+    @Column(name = &quot;is_active&quot;, nullable = false)
+<span class="nc" id="L42">    private Boolean isActive = true;</span>
 
     @CreationTimestamp
     @Column(name = &quot;created_at&quot;, nullable = false, updatable = false)
-<span class="nc" id="L46">    private LocalDateTime createdAt;</span>
+    private LocalDateTime createdAt;
 
     // Relationships
-<span class="pc" id="L49">    @OneToMany(mappedBy = &quot;category&quot;, cascade = CascadeType.ALL, fetch = FetchType.LAZY)</span>
+    @OneToMany(mappedBy = &quot;category&quot;, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 <span class="nc" id="L50">    private List&lt;Product&gt; products = new ArrayList&lt;&gt;();</span>
 
     /**
@@ -84,11 +84,11 @@ public class Category {
     @Override
     public String toString() {
 <span class="nc" id="L86">        return &quot;Category{&quot; +</span>
-                &quot;id=&quot; + id +
-                &quot;, name='&quot; + name + '\'' +
-                &quot;, description='&quot; + description + '\'' +
-                &quot;, isActive=&quot; + isActive +
-                &quot;, createdAt=&quot; + createdAt +
+<span class="nc" id="L87">                &quot;id=&quot; + id +</span>
+<span class="nc" id="L88">                &quot;, name='&quot; + name + '\'' +</span>
+<span class="nc" id="L89">                &quot;, description='&quot; + description + '\'' +</span>
+<span class="nc" id="L90">                &quot;, isActive=&quot; + isActive +</span>
+<span class="nc" id="L91">                &quot;, createdAt=&quot; + createdAt +</span>
 <span class="nc" id="L92">                &quot;, productCount=&quot; + getProductCount() +</span>
                 '}';
     }

@@ -23,9 +23,9 @@ import java.time.LocalDateTime;
     @Index(name = &quot;idx_created_by&quot;, columnList = &quot;created_by&quot;),
     @Index(name = &quot;idx_created_at&quot;, columnList = &quot;created_at&quot;)
 })
-<span class="nc bnc" id="L26" title="All 78 branches missed.">@Data</span>
-<span class="fc" id="L27">@NoArgsConstructor</span>
-<span class="nc" id="L28">@AllArgsConstructor</span>
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 
     @Id
@@ -35,15 +35,15 @@ public class Product {
     @NotBlank(message = &quot;Product name is required&quot;)
     @Size(min = 3, max = 100, message = &quot;Product name must be between 3 and 100 characters&quot;)
     @Column(nullable = false, length = 100)
-<span class="nc" id="L38">    private String name;</span>
+    private String name;
 
     @NotNull(message = &quot;Price is required&quot;)
     @DecimalMin(value = &quot;0.01&quot;, message = &quot;Price must be greater than 0&quot;)
     @DecimalMax(value = &quot;999999999.99&quot;, message = &quot;Price must not exceed 999,999,999.99&quot;)
     @Column(nullable = false, precision = 12, scale = 2)
-<span class="nc" id="L44">    private BigDecimal price;</span>
+    private BigDecimal price;
 
-<span class="pc" id="L46">    @NotNull(message = &quot;Quantity is required&quot;)</span>
+    @NotNull(message = &quot;Quantity is required&quot;)
     @Min(value = 0, message = &quot;Quantity cannot be negative&quot;)
     @Max(value = 99999, message = &quot;Quantity must not exceed 99,999&quot;)
     @Column(nullable = false)
@@ -51,28 +51,28 @@ public class Product {
 
     @Size(max = 500, message = &quot;Description must not exceed 500 characters&quot;)
     @Column(length = 500)
-<span class="nc" id="L54">    private String description;</span>
+    private String description;
 
     // Relationships
     @NotNull(message = &quot;Category is required&quot;)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = &quot;category_id&quot;, nullable = false, 
                 foreignKey = @ForeignKey(name = &quot;fk_product_category&quot;))
-<span class="nc" id="L61">    private Category category;</span>
+    private Category category;
 
     @NotNull(message = &quot;Creator is required&quot;)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = &quot;created_by&quot;, nullable = false, 
                 foreignKey = @ForeignKey(name = &quot;fk_product_user&quot;))
-<span class="nc" id="L67">    private User createdBy;</span>
+    private User createdBy;
 
     @CreationTimestamp
     @Column(name = &quot;created_at&quot;, nullable = false, updatable = false)
-<span class="nc" id="L71">    private LocalDateTime createdAt;</span>
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
     @Column(name = &quot;updated_at&quot;)
-<span class="nc" id="L75">    private LocalDateTime updatedAt;</span>
+    private LocalDateTime updatedAt;
 
     /**
      * Constructor for testing purposes
@@ -86,19 +86,19 @@ public class Product {
     /**
      * Constructor with category
      */
-<span class="nc" id="L89">    public Product(String name, BigDecimal price, Integer quantity, Category category, User createdBy) {</span>
-<span class="nc" id="L90">        this.name = name;</span>
-<span class="nc" id="L91">        this.price = price;</span>
-<span class="nc" id="L92">        this.quantity = quantity;</span>
-<span class="nc" id="L93">        this.category = category;</span>
-<span class="nc" id="L94">        this.createdBy = createdBy;</span>
-<span class="nc" id="L95">    }</span>
+<span class="fc" id="L89">    public Product(String name, BigDecimal price, Integer quantity, Category category, User createdBy) {</span>
+<span class="fc" id="L90">        this.name = name;</span>
+<span class="fc" id="L91">        this.price = price;</span>
+<span class="fc" id="L92">        this.quantity = quantity;</span>
+<span class="fc" id="L93">        this.category = category;</span>
+<span class="fc" id="L94">        this.createdBy = createdBy;</span>
+<span class="fc" id="L95">    }</span>
 
     /**
      * Full constructor
      */
-    public Product(String name, BigDecimal price, Integer quantity, String description, 
-<span class="nc" id="L101">                   Category category, User createdBy) {</span>
+<span class="nc" id="L100">    public Product(String name, BigDecimal price, Integer quantity, String description, </span>
+                   Category category, User createdBy) {
 <span class="nc" id="L102">        this.name = name;</span>
 <span class="nc" id="L103">        this.price = price;</span>
 <span class="nc" id="L104">        this.quantity = quantity;</span>
@@ -196,24 +196,24 @@ public class Product {
     @Override
     public String toString() {
 <span class="nc" id="L198">        return &quot;Product{&quot; +</span>
-                &quot;id=&quot; + id +
-                &quot;, name='&quot; + name + '\'' +
-                &quot;, price=&quot; + price +
-                &quot;, quantity=&quot; + quantity +
-                &quot;, description='&quot; + description + '\'' +
+<span class="nc" id="L199">                &quot;id=&quot; + id +</span>
+<span class="nc" id="L200">                &quot;, name='&quot; + name + '\'' +</span>
+<span class="nc" id="L201">                &quot;, price=&quot; + price +</span>
+<span class="nc" id="L202">                &quot;, quantity=&quot; + quantity +</span>
+<span class="nc" id="L203">                &quot;, description='&quot; + description + '\'' +</span>
 <span class="nc bnc" id="L204" title="All 2 branches missed.">                &quot;, categoryId=&quot; + (category != null ? category.getId() : null) +</span>
 <span class="nc bnc" id="L205" title="All 2 branches missed.">                &quot;, createdById=&quot; + (createdBy != null ? createdBy.getId() : null) +</span>
-                &quot;, createdAt=&quot; + createdAt +
-                &quot;, updatedAt=&quot; + updatedAt +
+<span class="nc" id="L206">                &quot;, createdAt=&quot; + createdAt +</span>
+<span class="nc" id="L207">                &quot;, updatedAt=&quot; + updatedAt +</span>
                 '}';
     }
-<span class="nc" id="L210">    public Long getId() { return id; }</span>
-<span class="nc" id="L211">    public String getTen() { return name; }</span>
-<span class="nc" id="L212">    public BigDecimal getGia() { return price; }</span>
-<span class="nc" id="L213">    public Integer getSoLuong() { return quantity; }</span>
+<span class="fc" id="L210">    public Long getId() { return id; }</span>
+<span class="fc" id="L211">    public String getTen() { return name; }</span>
+<span class="fc" id="L212">    public BigDecimal getGia() { return price; }</span>
+<span class="fc" id="L213">    public Integer getSoLuong() { return quantity; }</span>
 
-<span class="nc" id="L215">    public void setTen(String ten) { this.name = ten; }</span>
-<span class="nc" id="L216">    public void setGia(BigDecimal gia) { this.price = gia; }</span>
-<span class="nc" id="L217">    public void setSoLuong(Integer soLuong) { this.quantity= soLuong; }</span>
+<span class="fc" id="L215">    public void setTen(String ten) { this.name = ten; }</span>
+<span class="fc" id="L216">    public void setGia(BigDecimal gia) { this.price = gia; }</span>
+<span class="fc" id="L217">    public void setSoLuong(Integer soLuong) { this.quantity= soLuong; }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

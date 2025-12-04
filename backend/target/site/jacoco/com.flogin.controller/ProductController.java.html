@@ -27,7 +27,7 @@ import java.util.List;
     // API: GET /api/products/{id}
     @GetMapping(&quot;/{id}&quot;)
     public ResponseEntity&lt;ProductDto&gt; getProductById(@PathVariable Long id) {
-<span class="nc" id="L30">        return ResponseEntity.ok(productService.getProductById(id));</span>
+<span class="fc" id="L30">        return ResponseEntity.ok(productService.getProductById(id));</span>
     }
 
     // API: POST /api/products
@@ -40,14 +40,14 @@ import java.util.List;
     // API: PUT /api/products/{id}
     @PutMapping(&quot;/{id}&quot;)
     public ResponseEntity&lt;ProductDto&gt; updateProduct(@PathVariable Long id, @RequestBody ProductDto productDto) {
-<span class="nc" id="L43">        return ResponseEntity.ok(productService.updateProduct(id, productDto));</span>
+<span class="fc" id="L43">        return ResponseEntity.ok(productService.updateProduct(id, productDto));</span>
     }
 
     // API: DELETE /api/products/{id}
     @DeleteMapping(&quot;/{id}&quot;)
     public ResponseEntity&lt;Void&gt; deleteProduct(@PathVariable Long id) {
-<span class="nc" id="L49">        productService.deleteProduct(id);</span>
-<span class="nc" id="L50">        return ResponseEntity.noContent().build();</span>
+<span class="fc" id="L49">        productService.deleteProduct(id);</span>
+<span class="fc" id="L50">        return ResponseEntity.noContent().build();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

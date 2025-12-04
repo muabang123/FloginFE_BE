@@ -21,4 +21,3 @@ com\flogin\entity\Category.class
 com\flogin\repository\LoginHistoryRepository.class
 com\flogin\config\EncodingFilter.class
 com\flogin\service\ProductService.class
-com\flogin\controller\HomeController.class

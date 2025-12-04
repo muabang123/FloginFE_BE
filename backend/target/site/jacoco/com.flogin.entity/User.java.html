@@ -25,9 +25,9 @@ import java.util.List;
     @Index(name = &quot;idx_email&quot;, columnList = &quot;email&quot;),
     @Index(name = &quot;idx_is_active&quot;, columnList = &quot;is_active&quot;)
 })
-<span class="nc bnc" id="L28" title="All 94 branches missed.">@Data</span>
-<span class="fc" id="L29">@NoArgsConstructor</span>
-<span class="nc" id="L30">@AllArgsConstructor</span>
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
@@ -49,32 +49,32 @@ public class User {
     @NotBlank(message = &quot;Email is required&quot;)
     @Email(message = &quot;Email must be valid&quot;)
     @Column(nullable = false, unique = true, length = 100)
-<span class="nc" id="L52">    private String email;</span>
+    private String email;
 
     @Size(max = 100, message = &quot;Full name must not exceed 100 characters&quot;)
     @Column(name = &quot;full_name&quot;, length = 100)
-<span class="nc" id="L56">    private String fullName;</span>
+    private String fullName;
 
-<span class="pc" id="L58">    @Enumerated(EnumType.STRING)</span>
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
 <span class="nc" id="L60">    private Role role = Role.USER;</span>
 
-<span class="pc" id="L62">    @Column(name = &quot;is_active&quot;, nullable = false)</span>
-<span class="pc" id="L63">    private Boolean isActive = true;</span>
+    @Column(name = &quot;is_active&quot;, nullable = false)
+<span class="nc" id="L63">    private Boolean isActive = true;</span>
 
     @CreationTimestamp
     @Column(name = &quot;created_at&quot;, nullable = false, updatable = false)
-<span class="nc" id="L67">    private LocalDateTime createdAt;</span>
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
     @Column(name = &quot;updated_at&quot;)
-<span class="nc" id="L71">    private LocalDateTime updatedAt;</span>
+    private LocalDateTime updatedAt;
 
     // Relationships
-<span class="pc" id="L74">    @OneToMany(mappedBy = &quot;createdBy&quot;, cascade = CascadeType.ALL, fetch = FetchType.LAZY)</span>
+    @OneToMany(mappedBy = &quot;createdBy&quot;, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 <span class="nc" id="L75">    private List&lt;Product&gt; products = new ArrayList&lt;&gt;();</span>
 
-<span class="pc" id="L77">    @OneToMany(mappedBy = &quot;user&quot;, cascade = CascadeType.ALL, fetch = FetchType.LAZY)</span>
+    @OneToMany(mappedBy = &quot;user&quot;, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 <span class="nc" id="L78">    private List&lt;LoginHistory&gt; loginHistories = new ArrayList&lt;&gt;();</span>
 
     /**
@@ -129,26 +129,26 @@ public class User {
      * Check if user is active
      */
     public boolean isActive() {
-<span class="nc bnc" id="L132" title="All 4 branches missed.">        return this.isActive != null &amp;&amp; this.isActive;</span>
+<span class="pc bpc" id="L132" title="1 of 4 branches missed.">        return this.isActive != null &amp;&amp; this.isActive;</span>
     }
 
     @Override
     public String toString() {
 <span class="nc" id="L137">        return &quot;User{&quot; +</span>
-                &quot;id=&quot; + id +
-                &quot;, username='&quot; + username + '\'' +
-                &quot;, email='&quot; + email + '\'' +
-                &quot;, fullName='&quot; + fullName + '\'' +
-                &quot;, role=&quot; + role +
-                &quot;, isActive=&quot; + isActive +
-                &quot;, createdAt=&quot; + createdAt +
+<span class="nc" id="L138">                &quot;id=&quot; + id +</span>
+<span class="nc" id="L139">                &quot;, username='&quot; + username + '\'' +</span>
+<span class="nc" id="L140">                &quot;, email='&quot; + email + '\'' +</span>
+<span class="nc" id="L141">                &quot;, fullName='&quot; + fullName + '\'' +</span>
+<span class="nc" id="L142">                &quot;, role=&quot; + role +</span>
+<span class="nc" id="L143">                &quot;, isActive=&quot; + isActive +</span>
+<span class="nc" id="L144">                &quot;, createdAt=&quot; + createdAt +</span>
                 '}';
     }
-<span class="nc" id="L147">    public Long getId() { return id; }</span>
-<span class="nc" id="L148">    public void setId(Long id) { this.id = id; }</span>
-<span class="nc" id="L149">    public String getUsername() { return username; }</span>
-<span class="nc" id="L150">    public void setUsername(String username) { this.username = username; }</span>
+<span class="fc" id="L147">    public Long getId() { return id; }</span>
+<span class="fc" id="L148">    public void setId(Long id) { this.id = id; }</span>
+<span class="fc" id="L149">    public String getUsername() { return username; }</span>
+<span class="fc" id="L150">    public void setUsername(String username) { this.username = username; }</span>
 <span class="fc" id="L151">    public String getPassword() { return password; }</span>
-<span class="nc" id="L152">    public void setPassword(String password) { this.password = password; }</span>
+<span class="fc" id="L152">    public void setPassword(String password) { this.password = password; }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

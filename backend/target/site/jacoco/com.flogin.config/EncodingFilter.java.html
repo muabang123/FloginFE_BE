@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EncodingFilter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Flogin Backend</a> &gt; <a href="index.source.html" class="el_package">com.flogin.config</a> &gt; <span class="el_source">EncodingFilter.java</span></div><h1>EncodingFilter.java</h1><pre class="source lang-java linenums">// src/main/java/com/flogin/config/EncodingFilter.java
-package com.flogin.config;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EncodingFilter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Flogin Backend</a> &gt; <a href="index.source.html" class="el_package">com.flogin.config</a> &gt; <span class="el_source">EncodingFilter.java</span></div><h1>EncodingFilter.java</h1><pre class="source lang-java linenums">package com.flogin.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -10,15 +9,29 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+/**
+ * =========================================================================================
+ * BỘ LỌC MÃ HÓA KÝ TỰ (ENCODING FILTER)
+ * =========================================================================================
+ * MỤC TIÊU (CHECKLIST III.8 - Input/Output):
+ * - Đảm bảo tất cả request và response đều sử dụng bảng mã UTF-8.
+ * - Ngăn chặn lỗi hiển thị font chữ Tiếng Việt khi truyền tải dữ liệu.
+ * =========================================================================================
+ */
 @Component
-<span class="fc" id="L14">public class EncodingFilter extends OncePerRequestFilter {</span>
+<span class="fc" id="L22">public class EncodingFilter extends OncePerRequestFilter {</span>
+
     @Override
     protected void doFilterInternal(HttpServletRequest request,
             HttpServletResponse response,
             FilterChain filterChain) throws ServletException, IOException {
-<span class="fc" id="L19">        request.setCharacterEncoding(&quot;UTF-8&quot;);</span>
-<span class="fc" id="L20">        response.setCharacterEncoding(&quot;UTF-8&quot;);</span>
-<span class="fc" id="L21">        filterChain.doFilter(request, response);</span>
-<span class="fc" id="L22">    }</span>
+
+        // Thiết lập chuẩn UTF-8 cho cả chiều đi và chiều về
+<span class="fc" id="L30">        request.setCharacterEncoding(&quot;UTF-8&quot;);</span>
+<span class="fc" id="L31">        response.setCharacterEncoding(&quot;UTF-8&quot;);</span>
+
+        // Chuyển tiếp request đến filter tiếp theo trong chuỗi
+<span class="fc" id="L34">        filterChain.doFilter(request, response);</span>
+<span class="fc" id="L35">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

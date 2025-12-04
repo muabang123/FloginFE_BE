@@ -8,6 +8,7 @@ function AppNavbar() {
     const handleLogout = () => {
         // Trong tương lai, bạn có thể xóa token tại đây
         console.log("Đã đăng xuất");
+        localStorage.removeItem('authToken');
         navigate('/'); // Quay về trang Login
     };
 

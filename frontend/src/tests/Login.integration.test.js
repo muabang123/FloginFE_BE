@@ -1,55 +1,38 @@
-// src/tests/Login.integration.test.js
-
+import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
 import Login from '../components/Login';
-import '@testing-library/jest-dom';
 
-// 1. Mock 'authService' để ngăn lỗi Network Error
-// File test này phải giả lập API giống như Login.test.js
+// --- PHẦN 1: MOCKING (Làm giả dữ liệu & Môi trường) ---
+
+// 1. Mock Service API
 import * as authService from '../service/authService';
 jest.mock('../service/authService');
-// ---------------------------------
 
-// Cần mock 2 file ảnh
+// 2. Mock các file Ảnh (QUAN TRỌNG: Để tránh lỗi "SyntaxError" khi Jest đọc file ảnh)
 jest.mock('../assets/background.png', () => 'background-image');
 jest.mock('../assets/Logo-DH-Sai-Gon-SGU.png', () => 'logo-image');
 
-describe('Login Component Integration Tests', () => {
+// 3. Mock Router (để kiểm tra chuyển trang)
+const mockNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockNavigate,
+}));
 
-  // Reset mock trước mỗi test
+// --- PHẦN 2: TEST SUITE ---
+
+describe('Login Component - Comprehensive Integration Tests', () => {
+  
+  // Reset mọi dữ liệu giả trước khi chạy mỗi bài test
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  // Test 1: Test validation (Yêu cầu a, c)
-  test('Hiển thị lỗi validation khi submit form rỗng', async () => {
-    render(
-      <MemoryRouter>
-        <Login />
-      </MemoryRouter>
-    );
-
-    const submitButton = screen.getByTestId('login-button');
-    fireEvent.click(submitButton);
-
-    await waitFor(() => {
-      const usernameError = screen.getByTestId('username-error');
-      expect(usernameError).toBeInTheDocument();
-      expect(usernameError.textContent).toBe("Tên đăng nhập không được để trống");
-      
-      expect(screen.getByTestId('password-error')).toBeInTheDocument();
-    });
-
-    // Đảm bảo API không bị gọi nếu validation fail
-    expect(authService.login).not.toHaveBeenCalled();
-  });
-
-  // Test 2: Test logic API (Yêu cầu b, c)
-  test('Hiển thị lỗi API khi submit sai thông tin', async () => {
-    // Giả lập API trả về lỗi
-    authService.login.mockRejectedValue(new Error("Sai tên tài khoản hoặc mật khẩu!"));
-
+  // --- NHÓM TEST GIAO DIỆN CƠ BẢN ---
+  
+  test('1. Hiển thị đầy đủ các phần tử và cho phép nhập liệu', () => {
     render(
       <MemoryRouter>
         <Login />
@@ -60,24 +43,73 @@ describe('Login Component Integration Tests', () => {
     const passwordInput = screen.getByTestId('password-input');
     const submitButton = screen.getByTestId('login-button');
 
-    // Điền thông tin (hợp lệ validation, nhưng sai logic)
-    fireEvent.change(usernameInput, { target: { value: 'user123' } });
-    fireEvent.change(passwordInput, { target: { value: 'Pass123' } });
+    // Kiểm tra sự tồn tại
+    expect(usernameInput).toBeInTheDocument();
+    expect(passwordInput).toBeInTheDocument();
+    expect(submitButton).toBeInTheDocument();
 
-    fireEvent.click(submitButton);
+    // Kiểm tra nhập liệu (User gõ chữ)
+    fireEvent.change(usernameInput, { target: { value: 'testuser' } });
+    fireEvent.change(passwordInput, { target: { value: 'password123' } });
 
-    // Chờ đợi và kiểm tra lỗi API
+    expect(usernameInput.value).toBe('testuser');
+    expect(passwordInput.value).toBe('password123');
+  });
+
+  // --- NHÓM TEST VALIDATION (Kiểm tra lỗi nhập liệu) ---
+
+  test('2. Hiển thị lỗi validation khi submit form rỗng', async () => {
+    render(
+      <MemoryRouter>
+        <Login />
+      </MemoryRouter>
+    );
+
+    // Click nút khi chưa nhập gì
+    fireEvent.click(screen.getByTestId('login-button'));
+
     await waitFor(() => {
-      // Sửa: Lỗi API bây giờ sẽ hiển thị trong 'login-message'
-      const apiError = screen.getByTestId('login-message'); 
-      expect(apiError).toBeInTheDocument();
-      expect(apiError.textContent).toContain("Sai tên tài khoản hoặc mật khẩu!");
+      // Kiểm tra thông báo lỗi cụ thể
+      const usernameError = screen.getByTestId('username-error');
+      expect(usernameError).toBeInTheDocument();
+      expect(usernameError.textContent).toBe("Tên đăng nhập không được để trống");
+      
+      expect(screen.getByTestId('password-error')).toBeInTheDocument();
+    });
+
+    // Quan trọng: Đảm bảo API KHÔNG được gọi
+    expect(authService.login).not.toHaveBeenCalled();
+  });
+
+  test('3. Hiển thị lỗi validation riêng lẻ (VD: Pass thiếu số)', async () => {
+    render(
+      <MemoryRouter>
+        <Login />
+      </MemoryRouter>
+    );
+
+    const usernameInput = screen.getByTestId('username-input');
+    const passwordInput = screen.getByTestId('password-input');
+
+    // Nhập Username đúng, Password sai quy tắc (thiếu số)
+    fireEvent.change(usernameInput, { target: { value: 'testuser' } });
+    fireEvent.change(passwordInput, { target: { value: 'passwordkhongcoso' } });
+
+    fireEvent.click(screen.getByTestId('login-button'));
+
+    await waitFor(() => {
+      // Lỗi password phải hiện
+      expect(screen.getByTestId('password-error')).toHaveTextContent("Mật khẩu phải chứa ít nhất một số");
+      
+      // Lỗi username KHÔNG được hiện (vì nhập đúng rồi)
+      expect(screen.queryByTestId('username-error').textContent).toBe("");
     });
   });
 
-  // Test 3: Test flow thành công (Yêu cầu b, c)
-  test('Gửi form hợp lệ và gọi API thành công', async () => {
-    // Giả lập API trả về thành công (với token)
+  // --- NHÓM TEST LOGIC API (Gọi Server) ---
+
+  test('4. Login thành công: Gọi API đúng tham số và chuyển trang', async () => {
+    // Giả lập API trả về thành công
     authService.login.mockResolvedValue({ token: 'fake-token-123' });
 
     render(
@@ -86,57 +118,55 @@ describe('Login Component Integration Tests', () => {
       </MemoryRouter>
     );
 
-    const usernameInput = screen.getByTestId('username-input');
-    const passwordInput = screen.getByTestId('password-input');
-    const submitButton = screen.getByTestId('login-button');
+    // Điền thông tin hợp lệ
+    fireEvent.change(screen.getByTestId('username-input'), { target: { value: 'admin' } });
+    fireEvent.change(screen.getByTestId('password-input'), { target: { value: 'admin123' } });
 
-    // Điền thông tin (hợp lệ)
-    fireEvent.change(usernameInput, { target: { value: 'admin' } });
-    fireEvent.change(passwordInput, { target: { value: 'admin123' } });
+    fireEvent.click(screen.getByTestId('login-button'));
 
-    fireEvent.click(submitButton);
-
-    // Chờ đợi và kiểm tra API đã được gọi
+    // Kiểm tra API được gọi
     await waitFor(() => {
       expect(authService.login).toHaveBeenCalledTimes(1);
       expect(authService.login).toHaveBeenCalledWith('admin', 'admin123');
     });
+
+    // Kiểm tra chuyển trang
+    await waitFor(() => {
+      expect(mockNavigate).toHaveBeenCalledWith('/products');
+    });
   });
 
-  // Test 4: Test validation chi tiết (chỉ sai password)
-  test('Hiển thị lỗi validation chỉ cho Mật khẩu (không có số)', async () => {
+  test('5. Login thất bại: Hiển thị lỗi từ API và KHÔNG chuyển trang', async () => {
+    // Giả lập API trả về lỗi
+    const errorMessage = "Sai tên tài khoản hoặc mật khẩu!";
+    authService.login.mockRejectedValue(new Error(errorMessage));
+
     render(
       <MemoryRouter>
         <Login />
       </MemoryRouter>
     );
+    fireEvent.change(screen.getByTestId('username-input'), { target: { value: 'wronguser' } });
+    
+    fireEvent.change(screen.getByTestId('password-input'), { target: { value: 'Wrongpass1' } }); 
 
-    const usernameInput = screen.getByTestId('username-input');
-    const passwordInput = screen.getByTestId('password-input');
-    const submitButton = screen.getByTestId('login-button');
+    fireEvent.click(screen.getByTestId('login-button'));
 
-    // Điền thông tin (username hợp lệ, password sai validation)
-    fireEvent.change(usernameInput, { target: { value: 'testuser' } });
-    fireEvent.change(passwordInput, { target: { value: 'passwordkhongcoso' } });
-
-    fireEvent.click(submitButton);
-
+    // Kiểm tra hiển thị lỗi API
     await waitFor(() => {
-      // Lỗi password phải xuất hiện
-      const passwordError = screen.getByTestId('password-error');
-      expect(passwordError).toBeInTheDocument();
-      expect(passwordError.textContent).toBe("Mật khẩu phải chứa ít nhất một số");
-
-      // Lỗi username không được xuất hiện
-      // Dùng queryByTestId vì nó trả về null nếu không tìm thấy (thay vì văng lỗi)
-      const usernameError = screen.queryByTestId('username-error');
-      expect(usernameError.textContent).toBe("");
+      const apiErrorAlert = screen.getByTestId('login-message');
+      expect(apiErrorAlert).toBeInTheDocument();
+      expect(apiErrorAlert).toHaveTextContent(errorMessage);
     });
+
+    // Đảm bảo không chuyển trang
+    expect(mockNavigate).not.toHaveBeenCalled();
   });
 
-  // Test 5: Test trạng thái loading
-  test('Hiển thị "Đang đăng nhập..." và vô hiệu hóa nút khi submit', async () => {
-    // Giả lập API bị treo
+  // --- NHÓM TEST TRẢI NGHIỆM NGƯỜI DÙNG (UX) ---
+
+  test('6. Hiển thị trạng thái Loading (Disabled nút) khi đang gọi API', async () => {
+    // Giả lập mạng chậm (0.5s)
     authService.login.mockImplementation(() => {
       return new Promise(resolve => setTimeout(() => resolve({ token: 'ok' }), 500));
     });
@@ -147,26 +177,21 @@ describe('Login Component Integration Tests', () => {
       </MemoryRouter>
     );
 
-    const usernameInput = screen.getByTestId('username-input');
-    const passwordInput = screen.getByTestId('password-input');
+    // Điền và Submit
+    fireEvent.change(screen.getByTestId('username-input'), { target: { value: 'user' } });
+    fireEvent.change(screen.getByTestId('password-input'), { target: { value: 'pass123' } });
+    fireEvent.click(screen.getByTestId('login-button'));
+
     const submitButton = screen.getByTestId('login-button');
 
-    // Điền thông tin hợp lệ
-    fireEvent.change(usernameInput, { target: { value: 'admin' } });
-    fireEvent.change(passwordInput, { target: { value: 'admin123' } });
-
-    // Nhấn nút
-    fireEvent.click(submitButton);
-
-    // Kiểm tra ngay lập tức: nút bị vô hiệu hóa và đổi text
+    // CHECK 1: Ngay lập tức phải disable nút và hiện Loading
     expect(submitButton).toBeDisabled();
-    expect(submitButton.textContent).toContain("Đang đăng nhập...");
+    expect(submitButton).toHaveTextContent("Đang đăng nhập...");
 
-    // Chờ cho API (giả) hoàn thành
+    // CHECK 2: Sau khi xong (0.5s) thì trở lại bình thường
     await waitFor(() => {
-      // Nút phải trở lại bình thường
       expect(submitButton).not.toBeDisabled();
-      expect(submitButton.textContent).toContain("Đăng nhập");
+      expect(submitButton).toHaveTextContent("Đăng nhập");
     });
   });
 

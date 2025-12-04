@@ -154,4 +154,16 @@ class SecurityIntegrationTest {
                 .content(objectMapper.writeValueAsString(wrongRequest)))
                 .andExpect(status().isUnauthorized());
     }
+    @Test
+    @DisplayName("CSRF: Kiểm tra cấu hình CSRF (Disabled cho API stateless)")
+    void testCsrfDisabledOrHandled() throws Exception {
+        // Gửi thử một request POST hợp lệ nhưng KHÔNG có CSRF token
+        // Nếu dùng JWT, ta mong đợi nó KHÔNG bị lỗi 403 Forbidden do thiếu CSRF token
+        LoginRequest request = new LoginRequest("admin", "admin123"); // Dùng user đúng
+
+        mockMvc.perform(post("/api/auth/login")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isOk()); // Hoặc .isUnauthorized() nếu sai pass, nhưng KHÔNG ĐƯỢC là 403 do CSRF
+    }
 }

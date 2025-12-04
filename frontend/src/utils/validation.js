@@ -9,7 +9,7 @@ export const validateUsername = (username) => {
   if (username.length > 50) {
     return "Tên đăng nhập không được quá 50 ký tự";
   }
-  if (!/^[a-zA-Z0-9]+$/.test(username)) {
+  if (!/^[a-zA-Z0-9.\-_]+$/.test(username)) {
     return "Tên đăng nhập chỉ được chứa chữ cái và số";
   }
   return "";

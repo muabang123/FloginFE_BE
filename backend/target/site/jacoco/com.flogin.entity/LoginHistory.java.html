@@ -22,44 +22,44 @@ import java.time.LocalDateTime;
     @Index(name = &quot;idx_login_time&quot;, columnList = &quot;login_time&quot;),
     @Index(name = &quot;idx_is_success&quot;, columnList = &quot;is_success&quot;)
 })
-<span class="nc bnc" id="L25" title="All 70 branches missed.">@Data</span>
-<span class="fc" id="L26">@NoArgsConstructor</span>
-<span class="nc" id="L27">@AllArgsConstructor</span>
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class LoginHistory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-<span class="nc" id="L32">    private Long id;</span>
+    private Long id;
 
     // Nullable - vì có thể login với username không tồn tại
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = &quot;user_id&quot;, foreignKey = @ForeignKey(name = &quot;fk_login_history_user&quot;))
-<span class="nc" id="L37">    private User user;</span>
+    private User user;
 
     @NotBlank(message = &quot;Username is required&quot;)
     @Size(max = 50, message = &quot;Username must not exceed 50 characters&quot;)
     @Column(nullable = false, length = 50)
-<span class="nc" id="L42">    private String username;</span>
+    private String username;
 
     @Size(max = 45, message = &quot;IP address must not exceed 45 characters&quot;)
     @Column(name = &quot;ip_address&quot;, length = 45)
-<span class="nc" id="L46">    private String ipAddress;</span>
+    private String ipAddress;
 
     @Size(max = 255, message = &quot;User agent must not exceed 255 characters&quot;)
     @Column(name = &quot;user_agent&quot;, length = 255)
-<span class="nc" id="L50">    private String userAgent;</span>
+    private String userAgent;
 
     @NotNull(message = &quot;Success status is required&quot;)
     @Column(name = &quot;is_success&quot;, nullable = false)
-<span class="nc" id="L54">    private Boolean isSuccess;</span>
+    private Boolean isSuccess;
 
     @Size(max = 255, message = &quot;Failure reason must not exceed 255 characters&quot;)
     @Column(name = &quot;failure_reason&quot;, length = 255)
-<span class="nc" id="L58">    private String failureReason;</span>
+    private String failureReason;
 
     @CreationTimestamp
     @Column(name = &quot;login_time&quot;, nullable = false, updatable = false)
-<span class="nc" id="L62">    private LocalDateTime loginTime;</span>
+    private LocalDateTime loginTime;
 
     /**
      * Constructor for successful login
@@ -88,8 +88,8 @@ public class LoginHistory {
     /**
      * Constructor with all fields
      */
-    public LoginHistory(User user, String username, String ipAddress, String userAgent, 
-<span class="nc" id="L92">                       Boolean isSuccess, String failureReason) {</span>
+<span class="nc" id="L91">    public LoginHistory(User user, String username, String ipAddress, String userAgent, </span>
+                       Boolean isSuccess, String failureReason) {
 <span class="nc" id="L93">        this.user = user;</span>
 <span class="nc" id="L94">        this.username = username;</span>
 <span class="nc" id="L95">        this.ipAddress = ipAddress;</span>
@@ -160,13 +160,13 @@ public class LoginHistory {
     @Override
     public String toString() {
 <span class="nc" id="L162">        return &quot;LoginHistory{&quot; +</span>
-                &quot;id=&quot; + id +
+<span class="nc" id="L163">                &quot;id=&quot; + id +</span>
 <span class="nc bnc" id="L164" title="All 2 branches missed.">                &quot;, userId=&quot; + (user != null ? user.getId() : null) +</span>
-                &quot;, username='&quot; + username + '\'' +
-                &quot;, ipAddress='&quot; + ipAddress + '\'' +
-                &quot;, isSuccess=&quot; + isSuccess +
-                &quot;, failureReason='&quot; + failureReason + '\'' +
-                &quot;, loginTime=&quot; + loginTime +
+<span class="nc" id="L165">                &quot;, username='&quot; + username + '\'' +</span>
+<span class="nc" id="L166">                &quot;, ipAddress='&quot; + ipAddress + '\'' +</span>
+<span class="nc" id="L167">                &quot;, isSuccess=&quot; + isSuccess +</span>
+<span class="nc" id="L168">                &quot;, failureReason='&quot; + failureReason + '\'' +</span>
+<span class="nc" id="L169">                &quot;, loginTime=&quot; + loginTime +</span>
                 '}';
     }
 }
