@@ -20476,3 +20476,463 @@
 2025-12-04 15:44:26 [http-nio-8080-exec-133] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
 2025-12-04 15:44:26 [http-nio-8080-exec-133] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
 2025-12-04 15:44:26 [http-nio-8080-exec-133] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-04 15:44:31 [http-nio-8080-exec-237] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-12-04 15:44:31 [http-nio-8080-exec-237] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-12-04 15:44:31 [http-nio-8080-exec-237] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-12-04 15:44:31 [http-nio-8080-exec-237] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-12-04 15:44:31 [http-nio-8080-exec-237] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-12-04 15:44:31 [http-nio-8080-exec-237] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-04 15:44:31 [http-nio-8080-exec-162] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-12-04 15:44:31 [http-nio-8080-exec-162] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-12-04 15:44:31 [http-nio-8080-exec-162] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-12-04 15:44:31 [http-nio-8080-exec-162] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-12-04 15:44:31 [http-nio-8080-exec-162] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-12-04 15:44:31 [http-nio-8080-exec-162] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-04 15:44:33 [http-nio-8080-exec-257] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-12-04 15:44:33 [http-nio-8080-exec-257] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-12-04 15:44:33 [http-nio-8080-exec-257] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-12-04 15:44:33 [http-nio-8080-exec-257] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-12-04 15:44:33 [http-nio-8080-exec-257] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-12-04 15:44:33 [http-nio-8080-exec-257] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-04 15:44:33 [http-nio-8080-exec-199] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/products", parameters={}
+2025-12-04 15:44:33 [http-nio-8080-exec-199] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-12-04 15:44:33 [http-nio-8080-exec-199] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.category_id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.description,
+        p1_0.name,
+        p1_0.price,
+        p1_0.quantity,
+        p1_0.updated_at 
+    from
+        products p1_0
+2025-12-04 15:44:33 [http-nio-8080-exec-199] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-12-04 15:44:33 [http-nio-8080-exec-199] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Pro X1, gia=35000000.00, soLuong=50, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-12-04 15:44:33 [http-nio-8080-exec-199] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-04 15:50:34 [main] INFO  c.f.c.AuthControllerIntegrationTest - Starting AuthControllerIntegrationTest using Java 17.0.12 with PID 23240 (started by Admin in C:\Users\Admin\FloginFE_BE\backend)
+2025-12-04 15:50:34 [main] DEBUG c.f.c.AuthControllerIntegrationTest - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-04 15:50:34 [main] INFO  c.f.c.AuthControllerIntegrationTest - The following 1 profile is active: "dev"
+2025-12-04 15:50:35 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@544e3679
+2025-12-04 15:50:39 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 3 mappings in 'requestMappingHandlerMapping'
+2025-12-04 15:50:39 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-04 15:50:40 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-04 15:50:40 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-04 15:50:40 [main] DEBUG com.flogin.config.EncodingFilter - Filter 'encodingFilter' configured for use
+2025-12-04 15:50:40 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-12-04 15:50:40 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-12-04 15:50:40 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+2025-12-04 15:50:40 [main] INFO  c.f.c.AuthControllerIntegrationTest - Started AuthControllerIntegrationTest in 7.63 seconds (process running for 10.943)
+2025-12-04 15:50:40 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=test.user_123, password=Test123]]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-test.user_123]]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=, password=Test123]]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Username không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=null, password=null]]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Password không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:41 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Tài kho?n c?a b?n ?ã b? khóa!, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=tàikho?n, password=M?tkh?u123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-tàikho?n]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=null, password=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Password không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=abc, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-abc]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Password không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.flogin.dto.LoginResponse> com.flogin.controller.AuthController.login(com.flogin.dto.LoginRequest,org.springframework.validation.BindingResult): JSON parse error: Unexpected character ('i' (code 105)): was expecting double-quote to start field name
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["JSON parse error: Unexpected character ('i' (code 105)): was expecting double-quote to start field n (truncated)..."]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('i' (code 105)): was expecting double-quote to start field name]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Pass12]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.flogin.dto.LoginResponse> com.flogin.controller.AuthController.login(com.flogin.dto.LoginRequest,org.springframework.validation.BindingResult): Content-Type 'text/plain;charset=UTF-8' is not supported
+2025-12-04 15:50:42 [main] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/plain;charset=UTF-8' is not supported]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (truncated)...]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Sai tên tài kho?n ho?c m?t kh?u!, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.flogin.dto.LoginResponse> com.flogin.controller.AuthController.login(com.flogin.dto.LoginRequest,org.springframework.validation.BindingResult): Content-Type 'application/octet-stream' is not supported
+2025-12-04 15:50:42 [main] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/octet-stream' is not supported]
+2025-12-04 15:50:42 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.flogin.controller.AuthControllerMockTest]: AuthControllerMockTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-04 15:50:42 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.flogin.FloginApplication for test class com.flogin.controller.AuthControllerMockTest
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=12345]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (truncated)...]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=null, password=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Username không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=test!user, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Password không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-testuser]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.flogin.dto.LoginResponse> com.flogin.controller.AuthController.login(com.flogin.dto.LoginRequest,org.springframework.validation.BindingResult): Content-Type 'application/xml;charset=UTF-8' is not supported
+2025-12-04 15:50:42 [main] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/xml;charset=UTF-8' is not supported]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Sai tên tài kho?n ho?c m?t kh?u!, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=null, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Username không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to []
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Required request body is missing: public org.springframework.http.ResponseEntity<com.flogin.dto.Logi (truncated)..."]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.flogin.dto.LoginResponse> com.flogin.controller.AuthController.login(com.flogin.dto.LoginRequest,org.springframework.validation.BindingResult)]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Password không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Tài kho?n c?a b?n ?ã b? khóa!, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=null, password=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Username không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=ab, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=, password=Test123]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Username không ???c ?? tr?ng, token=null]]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:50:42 [main] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.flogin.dto.LoginResponse> com.flogin.controller.AuthController.login(com.flogin.dto.LoginRequest,org.springframework.validation.BindingResult): JSON parse error: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1])
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["JSON parse error: Unexpected end-of-input: expected close marker for Object (start marker at [Source (truncated)..."]
+2025-12-04 15:50:42 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1])]
+2025-12-04 15:50:42 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.flogin.controller.ProductControllerIntegrationTest]: ProductControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-04 15:50:42 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.flogin.FloginApplication for test class com.flogin.controller.ProductControllerIntegrationTest
+2025-12-04 15:50:42 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-12-04 15:50:42 [main] INFO  c.f.c.ProductControllerIntegrationTest - Starting ProductControllerIntegrationTest using Java 17.0.12 with PID 23240 (started by Admin in C:\Users\Admin\FloginFE_BE\backend)
+2025-12-04 15:50:42 [main] DEBUG c.f.c.ProductControllerIntegrationTest - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-04 15:50:42 [main] INFO  c.f.c.ProductControllerIntegrationTest - The following 1 profile is active: "dev"
+2025-12-04 15:50:42 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4df25105
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 7 mappings in 'requestMappingHandlerMapping'
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-04 15:50:43 [main] DEBUG com.flogin.config.EncodingFilter - Filter 'encodingFilter' configured for use
+2025-12-04 15:50:43 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-12-04 15:50:43 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-12-04 15:50:43 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-12-04 15:50:43 [main] INFO  c.f.c.ProductControllerIntegrationTest - Started ProductControllerIntegrationTest in 0.647 seconds (process running for 13.808)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getProductById(Long)
+2025-12-04 15:50:43 [main] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.flogin.dto.ProductDto> com.flogin.controller.ProductController.getProductById(java.lang.Long): Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "invalid"
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input stri (truncated)..."]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "invalid"]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getProductById(Long)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=1, ten=Laptop Dell, gia=15000000, soLuong=10, moTa=null, categoryId=1, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=ABC, gia=100000, soLuong=10, moTa=null, categoryId=1, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=null, ten=ABC, gia=100000, soLuong=10, moTa=null, categoryId=1, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#deleteProduct(Long)
+2025-12-04 15:50:43 [main] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<java.lang.Void> com.flogin.controller.ProductController.deleteProduct(java.lang.Long): Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "invalid"
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input stri (truncated)..."]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "invalid"]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#updateProduct(Long, ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Updated Name, gia=100000, soLuong=10, moTa=null, categoryId=null, createdByI (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Không tìm th?y s?n ph?m v?i id: 999"]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.RuntimeException: Không tìm th?y s?n ph?m v?i id: 999]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#updateProduct(Long, ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Laptop Dell, gia=12000000, soLuong=10, moTa=null, categoryId=1, createdById= (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=1, ten=Laptop Dell, gia=12000000, soLuong=10, moTa=null, categoryId=null, createdById= (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Bút bi, gia=0.01, soLuong=100, moTa=null, categoryId=1, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=null, ten=Bút bi, gia=0.01, soLuong=100, moTa=null, categoryId=1, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getProductById(Long)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Không tìm th?y s?n ph?m v?i id: 999"]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.RuntimeException: Không tìm th?y s?n ph?m v?i id: 999]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.flogin.dto.ProductDto> com.flogin.controller.ProductController.createProduct(com.flogin.dto.ProductDto): JSON parse error: Unexpected character ('i' (code 105)): was expecting double-quote to start field name
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["JSON parse error: Unexpected character ('i' (code 105)): was expecting double-quote to start field n (truncated)..."]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('i' (code 105)): was expecting double-quote to start field name]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#updateProduct(Long, ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Laptop HP Updated, gia=14000000, soLuong=20, moTa=null, categoryId=1, create (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=1, ten=Laptop HP Updated, gia=14000000, soLuong=20, moTa=null, categoryId=1, createdBy (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=iPhone 15, gia=25000000, soLuong=5, moTa=null, categoryId=2, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=3, ten=iPhone 15, gia=25000000, soLuong=5, moTa=null, categoryId=2, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#deleteProduct(Long)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=H?t hàng, gia=100000, soLuong=0, moTa=null, categoryId=1, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=null, ten=H?t hàng, gia=100000, soLuong=0, moTa=null, categoryId=1, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Siêu xe, gia=999999999.99, soLuong=1, moTa=null, categoryId=1, createdById=1 (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=null, ten=Siêu xe, gia=999999999.99, soLuong=1, moTa=null, categoryId=1, createdById=1 (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Product, gia=100000, soLuong=10, moTa=null, categoryId=999, createdById=1)]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Không tìm th?y Category ID: 999"]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.RuntimeException: Không tìm th?y Category ID: 999]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=Mass product, gia=1000, soLuong=99999, moTa=null, categoryId=1, createdById= (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=null, ten=Mass product, gia=1000, soLuong=99999, moTa=null, categoryId=1, createdById= (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Dell, gia=15000000, soLuong=10, moTa=null, categoryId=1, createdById=1) (truncated)...]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#deleteProduct(Long)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.flogin.config.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Không tìm th?y s?n ph?m v?i id: 999"]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.RuntimeException: Không tìm th?y s?n ph?m v?i id: 999]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:50:43 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[ProductDto(id=1, ten=Laptop Dell, gia=15000000, soLuong=10, moTa=null, categoryId=1, createdById=1) (truncated)...]
+2025-12-04 15:50:43 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.flogin.security.SecurityIntegrationTest]: SecurityIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-04 15:50:43 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.flogin.FloginApplication for test class com.flogin.security.SecurityIntegrationTest
+2025-12-04 15:50:43 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-12-04 15:50:43 [main] INFO  c.f.security.SecurityIntegrationTest - Starting SecurityIntegrationTest using Java 17.0.12 with PID 23240 (started by Admin in C:\Users\Admin\FloginFE_BE\backend)
+2025-12-04 15:50:43 [main] DEBUG c.f.security.SecurityIntegrationTest - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-04 15:50:43 [main] INFO  c.f.security.SecurityIntegrationTest - The following 1 profile is active: "dev"
+2025-12-04 15:50:43 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@439a0f0
+2025-12-04 15:50:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-04 15:50:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 273 ms. Found 4 JPA repository interfaces.
+2025-12-04 15:50:51 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-04 15:50:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-04 15:50:52 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-04 15:50:52 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-04 15:50:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-04 15:50:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ac1b109
+2025-12-04 15:50:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-04 15:50:53 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-04 15:50:53 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-12-04 15:50:57 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-04 15:50:58 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04 15:51:00 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-04 15:51:05 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 9 mappings in 'requestMappingHandlerMapping'
+2025-12-04 15:51:05 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-04 15:51:05 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-04 15:51:05 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-04 15:51:09 [main] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-12-04 15:51:09 [main] DEBUG com.flogin.config.EncodingFilter - Filter 'encodingFilter' configured for use
+2025-12-04 15:51:09 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-12-04 15:51:09 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-12-04 15:51:09 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-12-04 15:51:10 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 166 ms
+2025-12-04 15:51:10 [main] INFO  c.f.security.SecurityIntegrationTest - Started SecurityIntegrationTest in 26.434 seconds (process running for 40.707)
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#getAllProducts()
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.ProductController#createProduct(ProductDto)
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductDto(id=null, ten=<script>alert('XSS')</script>, gia=100000, soLuong=10, moTa=null, categoryId (truncated)...]
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ProductDto(id=null, ten=<script>alert('XSS')</script>, gia=100000, soLuong=10, moTa=null, categoryId (truncated)...]
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=null, password=null]]
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Password không ???c ?? tr?ng, token=null]]
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:51:10 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=admin, password=admin123]]
+2025-12-04 15:51:11 [main] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=??ng nh?p thành công, token=dummy-token-for-admin]]
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=testuser, password=WrongPass123]]
+2025-12-04 15:51:11 [main] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Sai tên tài kho?n ho?c m?t kh?u!, token=null]]
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.flogin.controller.AuthController#login(LoginRequest, BindingResult)
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest[username=admin' OR '1'='1, password=password]]
+2025-12-04 15:51:11 [main] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.is_active,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-04 15:51:11 [main] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse[message=Sai tên tài kho?n ho?c m?t kh?u!, token=null]]
+2025-12-04 15:51:12 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@544e3679, started on Thu Dec 04 15:50:35 ICT 2025
+2025-12-04 15:51:12 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@4df25105, started on Thu Dec 04 15:50:42 ICT 2025
+2025-12-04 15:51:12 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@439a0f0, started on Thu Dec 04 15:50:43 ICT 2025
+2025-12-04 15:51:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04 15:51:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-04 15:51:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
